@@ -15,7 +15,7 @@ __metaclass__ = PoolMeta
 class ProductConfiguration:
     'Product Configuration'
     __name__ = 'product.configuration'
-    salable_sequence = fields.Function(fields.Many2One('ir.sequence','Salable Sequence',
+    salable_sequence = fields.Function(fields.Many2One('ir.sequence', 'Salable Sequence',
         domain=[
             ('code', '=', 'product.product'),
         ], required=True),'get_fields', setter='set_fields')
@@ -24,7 +24,6 @@ class ProductConfiguration:
 class ProductConfigurationCompany:
     'Product Configuration Company'
     __name__ = 'product.configuration.company'
-    company = fields.Many2One('company.company', 'Company', required=True)
     salable_sequence = fields.Many2One('ir.sequence', 'Salable sequence', 
         domain=[
             ('code', '=', 'product.product'),

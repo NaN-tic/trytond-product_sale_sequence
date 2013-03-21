@@ -14,7 +14,7 @@ class Product:
     __name__ = 'product.product'
 
     @classmethod
-    def get_sequence(cls):
+    def get_sale_sequence(cls):
         Sequence = Pool().get('ir.sequence')
         Configuration = Pool().get('product.configuration')
 
@@ -27,14 +27,14 @@ class Product:
         vlist = [x.copy() for x in vlist]
         for values in vlist:
             if not values.get('code') and values.get('salable'):
-                values['code'] = cls.get_sequence()
+                values['code'] = cls.get_sale_sequence()
         return super(Product, cls).create(vlist)
 
     @classmethod
     def write(cls, products, vals):
-        super(Product, cls).write(products, vals)
         if vals.get('salable'):
             for product in products:
                 if not product.code:
-                    code = {'code': cls.get_sequence()}
+                    code = {'code': cls.get_sale_sequence()}
                     cls.write([product], code)
+        super(Product, cls).write(products, vals)
