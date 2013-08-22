@@ -22,17 +22,21 @@ class Product:
 
     @classmethod
     def create(cls, vlist):
+        Template = Pool().get('product.template')
+
         vlist = [x.copy() for x in vlist]
         for values in vlist:
-            if not values.get('code') and values.get('salable'):
+            tpl = Template.read([values.get('template')], ['salable'])[0]
+            if not values.get('code') and tpl.get('salable'):
                 values['code'] = cls.get_sale_sequence()
         return super(Product, cls).create(vlist)
 
     @classmethod
     def write(cls, products, vals):
-        if vals.get('salable'):
-            for product in products:
-                if not product.code:
-                    code = {'code': cls.get_sale_sequence()}
-                    cls.write([product], code)
         super(Product, cls).write(products, vals)
+        for product in products:
+            if product.template.salable and not product.code:
+                if not vals.get('code'):
+                    cls.write([product], {
+                        'code': cls.get_sale_sequence()
+                        })
