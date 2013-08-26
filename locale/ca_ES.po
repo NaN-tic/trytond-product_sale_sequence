@@ -2,6 +2,10 @@
 msgid ""
 msgstr "Content-Type: text/plain; charset=utf-8\n"
 
+msgctxt "error:product.product:"
+msgid "Configure salable sequence in Product Configuration"
+msgstr "Configura la seqüència de compra a la configuració dels productes."
+
 msgctxt "field:product.configuration,company:"
 msgid "Company"
 msgstr "Empresa"
