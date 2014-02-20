@@ -4,13 +4,24 @@
 from trytond.model import fields
 from trytond.pool import PoolMeta
 
-__all__ = ['Configuration']
+__all__ = [
+    'ProductConfiguration',
+    'ProductConfigurationCompany',
+]
 __metaclass__ = PoolMeta
 
 
-class Configuration:
+class ProductConfiguration:
     __name__ = 'product.configuration'
-    salable_sequence = fields.Property(fields.Many2One('ir.sequence',
-            'Sale Reference Sequence', domain=[
-                ('code', '=', 'product.product'),
-                ], required=True))
+    salable_sequence = fields.Function(fields.Many2One('ir.sequence', 'Salable Sequence',
+        domain=[
+            ('code', '=', 'product.product'),
+        ]),'get_fields', setter='set_fields')
+
+
+class ProductConfigurationCompany:
+    __name__ = 'product.configuration.company'
+    salable_sequence = fields.Many2One('ir.sequence', 'Salable sequence', 
+        domain=[
+            ('code', '=', 'product.product'),
+        ])

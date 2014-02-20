@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
-<!-- This file is part product_sale_sequence module for Tryton.
+<!-- This file is part product_configuration module for Tryton.
 The COPYRIGHT file at the top level of this repository contains the full copyright notices and license terms. -->
 <data>
     <xpath expr="/form" position="inside">
-            <label name="salable_sequence"/>
-            <field name="salable_sequence"/>
+        <label name="salable_sequence"/>
+        <field name="salable_sequence"/>
     </xpath>
 </data>
