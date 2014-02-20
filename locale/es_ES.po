@@ -7,16 +7,8 @@ msgid "Configure salable sequence in Product Configuration"
 msgstr ""
 "Debe configurar la secuencia de compra en la configuración de productos."
 
-msgctxt "field:product.configuration,company:"
-msgid "Company"
-msgstr "Empresa"
-
 msgctxt "field:product.configuration,salable_sequence:"
 msgid "Salable Sequence"
-msgstr "Secuencia productos venta"
-
-msgctxt "field:product.configuration.company,salable_sequence:"
-msgid "Salable sequence"
 msgstr "Secuencia productos venta"
 
 msgctxt "model:ir.sequence,name:sequence_product_salable"

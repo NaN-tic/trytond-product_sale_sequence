@@ -6,16 +6,8 @@ msgctxt "error:product.product:"
 msgid "Configure salable sequence in Product Configuration"
 msgstr "Configura la seqüència de compra a la configuració dels productes."
 
-msgctxt "field:product.configuration,company:"
-msgid "Company"
-msgstr "Empresa"
-
 msgctxt "field:product.configuration,salable_sequence:"
 msgid "Salable Sequence"
-msgstr "Seqüència productes venda"
-
-msgctxt "field:product.configuration.company,salable_sequence:"
-msgid "Salable sequence"
 msgstr "Seqüència productes venda"
 
 msgctxt "model:ir.sequence,name:sequence_product_salable"
