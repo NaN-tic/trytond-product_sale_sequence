@@ -4,20 +4,12 @@ msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "error:product.product:"
 msgid "Configure salable sequence in Product Configuration"
-msgstr "Configura la seqüència de compra a la configuració dels productes."
-
-msgctxt "field:product.configuration,company:"
-msgid "Company"
-msgstr "Empresa"
+msgstr "Configura la seqüència de venta a la configuració dels productes."
 
 msgctxt "field:product.configuration,salable_sequence:"
 msgid "Salable Sequence"
 msgstr "Seqüència productes venda"
 
-msgctxt "field:product.configuration.company,salable_sequence:"
-msgid "Salable sequence"
-msgstr "Seqüència productes venda"
-
 msgctxt "model:ir.sequence,name:sequence_product_salable"
 msgid "Product Salable"
-msgstr "Productes per vendre"
+msgstr "Producte de venta"
